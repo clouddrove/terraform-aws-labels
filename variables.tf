@@ -1,44 +1,61 @@
+#Module      : LABEL
+#Description : Terraform label module variables.
 variable "name" {
-  description = "Solution name, e.g. `app`"
+  type        = string
+  default     = ""
+  description = "Name  (e.g. `app` or `cluster`)."
 }
 
 variable "application" {
-  description = "Application name, e.g. `dw` or `CloudDrove`"
+  type        = string
+  default     = ""
+  description = "Application (e.g. `cd` or `clouddrove`)."
 }
 
 variable "environment" {
-  description = "Environment, e.g. `prod`, `staging`, `dev`, or `test`"
+  type        = string
+  default     = ""
+  description = "Environment (e.g. `prod`, `dev`, `staging`)."
 }
 
-variable "createdby" {
-  description = "CreatedBy, eg 'terraform'"
-  default     = "terraform"
-}
-
-variable "managedby" {
-  description = "ManagedBy, eg 'CloudDrove' or 'AnmolNagpal'"
-  default     = "anmol@clouddrove.com"
-}
-
-variable "enabled" {
-  description = "Set to false to prevent the module from creating any resources"
-  default     = "true"
-}
-
-variable "delimiter" {
-  type        = "string"
-  default     = "-"
-  description = "Delimiter to be used between `organization`, `name`, `environment` and `attributes`"
+variable "label_order" {
+  type        = list
+  default     = []
+  description = "Label order, e.g. `name`,`application`."
 }
 
 variable "attributes" {
-  type        = "list"
+  type        = list
   default     = []
-  description = "Additional attributes, e.g. `1`"
+  description = "Additional attributes (e.g. `1`)."
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map(string)
   default     = {}
-  description = "Additional tags (e.g. `map(`BusinessUnit`,`XYZ`)"
+  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
+}
+
+variable "createdby" {
+  type        = string
+  default     = "terraform"
+  description = "CreatedBy, eg 'terraform'."
+}
+
+variable "managedby" {
+  type        = string
+  default     = "anmol@clouddrove.com"
+  description = "ManagedBy, eg 'CloudDrove' or 'AnmolNagpal'."
+}
+
+variable "enabled" {
+  type        = bool
+  description = "Set to false to prevent the module from creating any resources."
+  default     = true
+}
+
+variable "delimiter" {
+  type        = string
+  default     = "-"
+  description = "Delimiter to be used between `organization`, `name`, `environment` and `attributes`."
 }
