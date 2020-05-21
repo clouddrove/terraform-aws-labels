@@ -33,7 +33,7 @@ jobs:
         uses: clouddrove/github-actions@v2.0
         with:
           actions_subcommand: 'plan'
-          tf_actions_working_dir: ./_example/
+          tf_actions_working_dir: ./_example
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
