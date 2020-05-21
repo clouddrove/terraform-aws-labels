@@ -32,3 +32,4 @@ func Test(t *testing.T) {
 	assert.Equal(t, "labels-clouddrove-test", Tags["Name"])
 	assert.Equal(t, "labels-clouddrove-test", Id)
 }
+
