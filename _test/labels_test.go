@@ -29,6 +29,6 @@ func Test(t *testing.T) {
 	Tags := terraform.OutputMap(t, terraformOptions, "tags")
 
 	// Check that we get back the outputs that we expect
-	assert.Equal(t, "labels-clouddrove-test", Tags["Name"])
-	assert.Equal(t, "labels-clouddrove-test", Id)
+	assert.Equal(t, "labels-clouddrove/terraform-labels", Tags["Name"])
+	assert.Equal(t, "labels-clouddrove/terraform-labels", Id)
 }

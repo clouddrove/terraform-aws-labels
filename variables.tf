@@ -13,7 +13,7 @@ variable "module-repo" {
 
   validation {
     # regex(...) fails if it cannot find a match
-    condition     = can(regex("^git::https", var.module-repo))
+    condition     = can(regex("^clouddrove/", var.module-repo))
     error_message = "The module-repo value must be a valid Git repo link."
   }
 }

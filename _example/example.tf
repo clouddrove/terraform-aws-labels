@@ -2,6 +2,6 @@ module "labels" {
   source = "./../"
 
   name        = "labels"
-  module-repo = "git::https://github.com/clouddrove/terraform-labels.git"
+  module-repo = "clouddrove/terraform-labels"
   label_order = ["name", "module-repo"]
 }
