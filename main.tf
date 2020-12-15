@@ -7,7 +7,8 @@ locals {
   enabled = var.enabled == true ? true : false
   id_context = {
     name        = var.name
-    module-repo = var.module-repo
+    environment = var.environment
+    repository  = var.repository
   }
 
   # run loop for label order and set in value.
@@ -15,8 +16,9 @@ locals {
 
   id          = lower(join(var.delimiter, local.id_labels, var.attributes))
   name        = local.enabled == true ? lower(format("%v", var.name)) : ""
+  environment = local.enabled == true ? lower(format("%v", var.environment)) : ""
   managedby   = local.enabled == true ? lower(format("%v", var.managedby)) : ""
-  module-repo = local.enabled == true ? lower(format("%v", var.module-repo)) : ""
+  repository  = local.enabled == true ? lower(format("%v", var.repository)) : ""
   attributes  = local.enabled == true ? lower(format("%v", join(var.delimiter, compact(var.attributes)))) : ""
 
   # Merge input tags with our tags.
@@ -24,8 +26,9 @@ locals {
   tags = merge(
     {
       "Name"        = local.id
+      "Environment" = local.environment
       "ManagedBy"   = local.managedby
-      "module-repo" = local.module-repo
+      "repository"  = local.repository
     },
     var.tags
   )

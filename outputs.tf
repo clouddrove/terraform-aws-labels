@@ -10,9 +10,13 @@ output "name" {
   description = "Normalized name."
 }
 
-output "module-repo" {
-  value       = local.module-repo
-  description = "Normalized module-repo"
+output "repository" {
+  value       = local.repository
+  description = "Normalized module repository"
+}
+output "environment" {
+  value       = local.environment
+  description = "Normalized projet's environment"
 }
 
 output "attributes" {

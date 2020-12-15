@@ -74,8 +74,9 @@ Here is an example of how you can use this module in your inventory structure:
     module "label" {
     source      = "git::https://github.com/clouddrove/terraform-labels.git?ref=tags/0.14.0"
     name        = "labels"
-    module-repo = "clouddrove/terraform-labels"
-    label_order = ["name", "module-repo"]
+    repository  = "https://github.com/clouddrove/terraform-labels"
+    environment = "test"
+    label_order = ["environment", "name"]
    }
 ```
 

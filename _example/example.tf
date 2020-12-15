@@ -2,6 +2,7 @@ module "labels" {
   source = "./../"
 
   name        = "labels"
-  module-repo = "clouddrove/terraform-labels"
-  label_order = ["name", "module-repo"]
+  repository  = "https://github.com/clouddrove/terraform-labels"
+  environment = "test"
+  label_order = ["environment", "name"]
 }
