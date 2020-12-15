@@ -6,16 +6,16 @@ variable "name" {
   description = "Name  (e.g. `app` or `cluster`)."
 }
 
-variable "application" {
+variable "module-repo" {
   type        = string
   default     = ""
-  description = "Application (e.g. `cd` or `clouddrove`)."
-}
+  description = "Terraform current module repo"
 
-variable "environment" {
-  type        = string
-  default     = ""
-  description = "Environment (e.g. `prod`, `dev`, `staging`)."
+  validation {
+    # regex(...) fails if it cannot find a match
+    condition     = can(regex("^git::https", var.module-repo))
+    error_message = "The module-repo value must be a valid Git repo link."
+  }
 }
 
 variable "label_order" {
@@ -34,12 +34,6 @@ variable "tags" {
   type        = map(string)
   default     = {}
   description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
-}
-
-variable "createdby" {
-  type        = string
-  default     = "terraform"
-  description = "CreatedBy, eg 'terraform'."
 }
 
 variable "managedby" {

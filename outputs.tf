@@ -10,14 +10,9 @@ output "name" {
   description = "Normalized name."
 }
 
-output "application" {
-  value       = local.application
-  description = "Normalized application."
-}
-
-output "environment" {
-  value       = local.environment
-  description = "Normalized environment."
+output "module-repo" {
+  value       = local.module-repo
+  description = "Normalized module-repo"
 }
 
 output "attributes" {

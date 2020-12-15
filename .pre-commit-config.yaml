@@ -1,13 +1,17 @@
-repos:
-  - repo: git://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.12.0
-    hooks:
-    - id: terraform_fmt
-
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.0.0
-    hooks:
-      - id: check-merge-conflict
+- repo: git://github.com/anmolnagpal/git-hooks-terraform
+  rev: v1.0.0 # Use the ref you want to point at
+  hooks:
+  - id: fmt
+  - id: validate
+- repo: git://github.com/pre-commit/pre-commit-hooks
+  rev: v3.3.0 # Use the ref you want to point at
+  hooks:
+      - id: end-of-file-fixer
       - id: trailing-whitespace
+      - id: mixed-line-ending
+      - id: check-byte-order-marker
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: debug-statements
       - id: check-yaml
       - id: check-added-large-files
