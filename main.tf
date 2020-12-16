@@ -9,6 +9,7 @@ locals {
     name        = var.name
     environment = var.environment
     repository  = var.repository
+    attributes  = var.attributes
   }
 
   # run loop for label order and set in value.
@@ -28,6 +29,7 @@ locals {
       "Name"        = local.id
       "Environment" = local.environment
       "ManagedBy"   = local.managedby
+      "Attributes"  = local.attributes
       "Repository"  = local.repository
     },
     var.tags
