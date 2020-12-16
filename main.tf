@@ -28,7 +28,7 @@ locals {
       "Name"        = local.id
       "Environment" = local.environment
       "ManagedBy"   = local.managedby
-      "repository"  = local.repository
+      "Repository"  = local.repository
     },
     var.tags
   )
