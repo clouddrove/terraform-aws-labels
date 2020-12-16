@@ -31,8 +31,8 @@ variable "label_order" {
 }
 
 variable "attributes" {
-  type        = string
-  default     = ""
+  type        = list
+  default     = []
   description = "Additional attributes (e.g. `1`)."
 }
 
