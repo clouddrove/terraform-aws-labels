@@ -1,8 +1,12 @@
 repos:
-- repo: git://github.com/anmolnagpal/git-hooks-terraform
-  rev: v1.0.0 # Use the ref you want to point at
+- repo: https://github.com/gruntwork-io/pre-commit
+  rev: v0.1.12 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
   hooks:
-  - id: fmt
+    - id: terraform-fmt
+    - id: terraform-validate
+    - id: shellcheck
+    - id: gofmt
+    - id: golint
 - repo: git://github.com/pre-commit/pre-commit-hooks
   rev: v3.4.0 # Use the ref you want to point at
   hooks:
