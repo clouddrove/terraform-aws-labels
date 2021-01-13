@@ -5,8 +5,6 @@ repos:
     - id: terraform-fmt
     - id: terraform-validate
     - id: shellcheck
-    - id: gofmt
-    - id: golint
 - repo: git://github.com/pre-commit/pre-commit-hooks
   rev: v3.4.0 # Use the ref you want to point at
   hooks:
