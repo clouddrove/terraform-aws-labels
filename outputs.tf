@@ -10,6 +10,8 @@ output "name" {
   description = "Normalized name."
 }
 
+
+
 output "repository" {
   value       = local.repository
   description = "Normalized module repository"
