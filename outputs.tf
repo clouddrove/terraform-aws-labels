@@ -17,9 +17,7 @@ output "repository" {
   description = "Normalized module repository"
 }
 output "environment" {
-  value = local.environment
-
-
+  value       = local.environment
   description = "Normalized projet's environment"
 }
 
