@@ -4,9 +4,9 @@
 package test
 
 import (
-	"testing"
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func Test(t *testing.T) {
@@ -15,7 +15,7 @@ func Test(t *testing.T) {
 	terraformOptions := &terraform.Options{
 		// Source path of Terraform directory.
 		TerraformDir: "../_example",
-		Upgrade: true,
+		Upgrade:      true,
 	}
 
 	// This will run 'terraform init' and 'terraform application' and will fail the test if any errors occur
@@ -25,11 +25,8 @@ func Test(t *testing.T) {
 	defer terraform.Destroy(t, terraformOptions)
 
 	// To get the value of an output variable, run 'terraform output'
-	Id := terraform.Output(t, terraformOptions, "id")
 	Tags := terraform.OutputMap(t, terraformOptions, "tags")
 
 	// Check that we get back the outputs that we expect
-	assert.Equal(t, "labels-clouddrove-test", Tags["Name"])
-	assert.Equal(t, "labels-clouddrove-test", Id)
+	assert.Equal(t, "test-labels", Tags["Name"])
 }
-
