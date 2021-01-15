@@ -5,4 +5,3 @@
 .idea
 *.iml
 *.terraform.lock.hcl
-/_test/go.sum

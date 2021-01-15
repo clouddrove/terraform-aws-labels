@@ -1,5 +1,7 @@
 #Module      : LABLE
-#Description : This terraform module is designed to generate consistent label names and tags #              for resources. You can use terraform-labels to implement a strict naming #              convention.
+#Description : This terraform module is designed to generate consistent label names and tags
+#              for resources. You can use terraform-labels to implement a strict naming
+#              convention.
 output "id" {
   value       = local.id
   description = "Disambiguated ID."
@@ -12,11 +14,12 @@ output "name" {
 
 output "repository" {
   value       = local.repository
-  description = "Normalized module repository"
+  description = "Terraform current module repo"
 }
+
 output "environment" {
   value       = local.environment
-  description = "Normalized projet's environment"
+  description = "Normalized environment"
 }
 
 output "attributes" {
