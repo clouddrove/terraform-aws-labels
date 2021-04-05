@@ -6,12 +6,6 @@ variable "name" {
   description = "Name  (e.g. `app` or `cluster`)."
 }
 
-variable "namespace" {
-  type        = string
-  default     = ""
-  description = "Namespace, which could be your organization name or abbreviation, e.g. 'eg' or 'cp'"
-}
-
 variable "environment" {
   type        = string
   default     = ""
@@ -27,7 +21,7 @@ variable "repository" {
 variable "label_order" {
   type        = list(any)
   default     = []
-  description = "Label order, e.g. sequence of application name and environment `name`,`environment`,`namespace`,'attribute' [`webserver`,`qa`,`devops`,`public`,] ."
+  description = "Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] ."
 }
 
 variable "attributes" {
@@ -62,7 +56,6 @@ variable "delimiter" {
 
 variable "context" {
   type = object({
-    namespace   = string
     environment = string
     name        = string
     enabled     = bool
@@ -72,7 +65,6 @@ variable "context" {
     tags        = map(string)
   })
   default = {
-    namespace   = ""
     environment = ""
     name        = ""
     enabled     = true

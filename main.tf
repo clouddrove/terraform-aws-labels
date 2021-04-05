@@ -6,14 +6,13 @@
 
 locals {
   defaults = {
-    label_order = ["namespace", "environment", "name", "attributes"]
+    label_order = ["environment", "name", "attributes"]
     delimiter   = "-"
     attributes  = [""]
   }
 
   id_context = {
     name        = var.name
-    namespace   = var.namespace
     environment = var.environment
     attributes  = lower(join(var.delimiter, var.attributes))
   }
@@ -27,7 +26,6 @@ locals {
   enabled = var.enabled
 
   name        = var.enabled == true ? lower(format("%v", var.name)) : ""
-  namespace   = var.enabled == true ? lower(format("%v", var.namespace)) : ""
   environment = var.enabled == true ? lower(format("%v", var.environment)) : ""
   managedby   = var.enabled == true ? lower(format("%v", var.managedby)) : ""
   repository  = var.enabled == true ? lower(format("%v", var.repository)) : ""
@@ -38,7 +36,6 @@ locals {
   tags_context = {
     # For AWS we need `Name` to be disambiguated sine it has a special meaning
     name        = local.id
-    namespace   = local.namespace
     environment = local.environment
     attributes  = local.id_context.attributes
     managedby   = local.managedby
@@ -53,7 +50,6 @@ locals {
   output_context = {
     enabled     = local.enabled
     name        = local.name
-    namespace   = local.namespace
     environment = local.environment
     attributes  = local.attributes
     tags        = local.tags

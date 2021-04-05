@@ -40,8 +40,10 @@ usage : |-
             namespace   = "eg"
             name        = "labels"
             environment = "prod"
-            label_order = ["namespace","name","attributes","environment"]
-            delimiter  = "-"
+            managedby   = "hello@clouddrove.com"
+            repository  = "https://github.com/clouddrove/terraform-labels"
+            label_order = ["name","attributes","environment"]
+            delimiter   = "-"
         tags = {
             "company"        = "cloudDrove"
             "Module Version" = "v0.14"

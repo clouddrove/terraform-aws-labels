@@ -12,11 +12,6 @@ output "name" {
   description = "Normalized name."
 }
 
-output "namespace" {
-  value       = local.namespace
-  description = "Normalized name."
-}
-
 output "repository" {
   value       = local.repository
   description = "Terraform current module repo"
