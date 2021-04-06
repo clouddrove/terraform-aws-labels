@@ -43,10 +43,11 @@ usage : |-
             managedby   = "hello@clouddrove.com"
             repository  = "https://github.com/clouddrove/terraform-labels"
             label_order = ["name","attributes","environment"]
+            tag_version = "v1.1.2"
             delimiter   = "-"
         tags = {
-            "company"        = "cloudDrove"
-            "Module Version" = "v0.14"
+            "Terraform Version"   = "0.15.0
+            "created_date"        = "4-Apr-21"
         }
      }
   ```

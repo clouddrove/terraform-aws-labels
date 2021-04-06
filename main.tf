@@ -31,7 +31,7 @@ locals {
   repository  = var.enabled == true ? lower(format("%v", var.repository)) : ""
   delimiter   = var.enabled == true ? lower(format("%v", var.delimiter)) : ""
   attributes  = var.enabled == true ? lower(format("%v", join(var.delimiter, compact(var.attributes)))) : ""
-
+  tag_version = var.enabled == true ? lower(format("%v", var.tag_version)) : ""
 
   tags_context = {
     # For AWS we need `Name` to be disambiguated sine it has a special meaning
@@ -40,6 +40,7 @@ locals {
     attributes  = local.id_context.attributes
     managedby   = local.managedby
     repository  = local.repository
+    tag_version = local.tag_version
   }
 
   generated_tags = { for l in keys(local.tags_context) : title(l) => local.tags_context[l] if length(local.tags_context[l]) > 0 }
@@ -57,6 +58,7 @@ locals {
     label_order = local.label_order
     managedby   = local.managedby
     repository  = local.repository
+    tag_version = local.tag_version
   }
 
 }
