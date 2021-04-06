@@ -37,8 +37,8 @@ variable "tags" {
 }
 
 variable "tag_version" {
-  type = string
-  default = ""
+  type        = string
+  default     = ""
   description = "Aditional attribute for git tag release"
 }
 
