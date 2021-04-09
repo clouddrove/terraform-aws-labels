@@ -36,8 +36,3 @@ output "label_order" {
   value       = local.label_order
   description = "Normalized Tag map."
 }
-
-output "tag_version" {
-  value       = local.tag_version
-  description = "git module release version."
-}

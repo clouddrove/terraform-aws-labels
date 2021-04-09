@@ -36,12 +36,6 @@ variable "tags" {
   description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
 }
 
-variable "tag_version" {
-  type        = string
-  default     = ""
-  description = "Aditional attribute for git tag release"
-}
-
 variable "managedby" {
   type        = string
   default     = "hello@clouddrove.com"

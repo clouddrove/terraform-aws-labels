@@ -37,13 +37,11 @@ usage : |-
   ```hcl
       module "label" {
             source      = "git::https://github.com/clouddrove/terraform-labels.git?ref=tags/0.14.0"
-            namespace   = "eg"
             name        = "labels"
             environment = "prod"
             managedby   = "hello@clouddrove.com"
             repository  = "https://github.com/clouddrove/terraform-labels"
             label_order = ["name","attributes","environment"]
-            tag_version = "v1.1.2"
             delimiter   = "-"
         tags = {
             "Terraform Version"   = "0.15.0
