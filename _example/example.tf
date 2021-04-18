@@ -3,5 +3,6 @@ module "labels" {
 
   name        = "labels"
   environment = "test"
-  label_order = ["environment", "name"]
+  attributes  = "public"
+  label_order = ["environment", "name", "attributes"]
 }
