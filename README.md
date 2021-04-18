@@ -72,11 +72,18 @@ This module has a few dependencies:
 Here is an example of how you can use this module in your inventory structure:
 ```hcl
     module "label" {
-      source      = "git::https://github.com/clouddrove/terraform-labels.git?ref=tags/0.14.0"
-      name        = "labels"
-      environment = "test"
-      label_order = ["environment", "name"]
-}
+          source      = "git::https://github.com/clouddrove/terraform-labels.git?ref=tags/0.15.0"
+          name        = "labels"
+          environment = "prod"
+          managedby   = "hello@clouddrove.com"
+          repository  = "https://github.com/clouddrove/terraform-labels"
+          label_order = ["name","attributes","environment"]
+          delimiter   = "-"
+      tags = {
+          "Terraform Version"   = "0.15.0"
+          "created_date"        = "4-Apr-21"
+      }
+   }
 ```
 
 
@@ -88,11 +95,12 @@ Here is an example of how you can use this module in your inventory structure:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| attributes | Additional attributes (e.g. `1`). | `list(any)` | `[]` | no |
+| attributes | Additional attributes (e.g. `1`). | `list(string)` | `[]` | no |
+| context | Default context to use for passing state between label invocations | <pre>object({<br>    environment = string<br>    name        = string<br>    enabled     = bool<br>    delimiter   = string<br>    attributes  = list(string)<br>    label_order = list(string)<br>    tags        = map(string)<br>  })</pre> | <pre>{<br>  "attributes": [],<br>  "delimiter": "",<br>  "enabled": true,<br>  "environment": "",<br>  "label_order": [],<br>  "name": "",<br>  "tags": {}<br>}</pre> | no |
 | delimiter | Delimiter to be used between `organization`, `name`, `environment` and `attributes`. | `string` | `"-"` | no |
 | enabled | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
 | environment | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
-| label\_order | Label order, e.g. `name`,`application`. | `list(any)` | `[]` | no |
+| label\_order | Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] . | `list(any)` | `[]` | no |
 | managedby | ManagedBy, eg 'CloudDrove'. | `string` | `"hello@clouddrove.com"` | no |
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | repository | Terraform current module repo | `string` | `"https://github.com/clouddrove/terraform-labels"` | no |
@@ -105,6 +113,7 @@ Here is an example of how you can use this module in your inventory structure:
 | attributes | Normalized attributes. |
 | environment | Normalized environment |
 | id | Disambiguated ID. |
+| label\_order | Normalized Tag map. |
 | name | Normalized name. |
 | repository | Terraform current module repo |
 | tags | Normalized Tag map. |
