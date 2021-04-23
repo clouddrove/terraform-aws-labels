@@ -60,7 +60,7 @@ jobs:
           tf_actions_working_dir: ./_example
 
   pre-commit:
-    name: 'terraform plan'
+    name: 'Pre-Commit'
     needs:
       - fmt
       - plan
