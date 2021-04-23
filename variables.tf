@@ -30,7 +30,7 @@ variable "attributes" {
   description = "Additional attributes (e.g. `1`)."
 }
 
-variable "tags" {
+variable "extra_tags" {
   type        = map(string)
   default     = {}
   description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
@@ -52,26 +52,4 @@ variable "delimiter" {
   type        = string
   default     = "-"
   description = "Delimiter to be used between `organization`, `name`, `environment` and `attributes`."
-}
-
-variable "context" {
-  type = object({
-    environment = string
-    name        = string
-    enabled     = bool
-    delimiter   = string
-    attributes  = list(string)
-    label_order = list(string)
-    tags        = map(string)
-  })
-  default = {
-    environment = ""
-    name        = ""
-    enabled     = true
-    delimiter   = ""
-    attributes  = []
-    label_order = []
-    tags        = {}
-  }
-  description = "Default context to use for passing state between label invocations"
 }

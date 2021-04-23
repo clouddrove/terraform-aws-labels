@@ -1,8 +1,12 @@
+
 module "labels" {
   source = "./../"
 
   name        = "labels"
   environment = "test"
-  attributes  = "public"
-  label_order = ["environment", "name", "attributes"]
+  label_order = ["name", "environment"]
+  attributes  = ["private"]
+  extra_tags = {
+    Application = "CloudDrove"
+  }
 }
