@@ -12,7 +12,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@v2.3.4
 
-      - name: 'Terraform Format'
+      - name: 'Terraform Format 💡'
         uses: 'clouddrove/github-actions@v7.0'
         with:
           actions_subcommand: 'fmt'
@@ -52,7 +52,7 @@ jobs:
           actions_subcommand: 'init'
           tf_actions_working_dir: ./_example
 
-      - name: 'Terraform plan'
+      - name: 'Terraform plan 🐧'
         uses: 'clouddrove/github-actions@v7.0'
         with:
           tf_actions_version: 0.15.0
@@ -74,6 +74,6 @@ jobs:
         run: |
          curl https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 
-      - name: 'Pre-Commit'
+      - name: 'Pre-Commit 🔎'
         uses: pre-commit/action@v2.0.3
         continue-on-error: true
