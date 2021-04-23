@@ -19,6 +19,8 @@ jobs:
 
   validate:
     name: 'terraform validate'
+    needs:
+      - fmt
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
@@ -37,6 +39,7 @@ jobs:
           tf_actions_working_dir: ./_example
   plan:
     name: 'terraform plan'
+    needs: fmt
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
@@ -45,11 +48,28 @@ jobs:
       - name: 'Terraform init'
         uses: 'clouddrove/github-actions@v6.0'
         with:
+          tf_actions_version: 0.15.0
           actions_subcommand: 'init'
           tf_actions_working_dir: ./_example
 
       - name: 'Terraform plan'
         uses: 'clouddrove/github-actions@v6.0'
         with:
+          tf_actions_version: 0.15.0
           actions_subcommand: 'plan'
           tf_actions_working_dir: ./_example
+
+  pre-commit:
+    name: 'terraform plan'
+    needs:
+      - fmt
+      - plan
+      - validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2.3.4
+
+      - name: 'Pre-Commit'
+        uses: pre-commit/action@v2.0.0
+        continue-on-error: true
