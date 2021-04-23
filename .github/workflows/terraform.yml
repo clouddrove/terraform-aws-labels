@@ -69,7 +69,9 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v2.3.4
-
+      - name: 'Install Tflint'
+        run: |
+         curl https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
       - name: 'Pre-Commit'
-        uses: pre-commit/action@v2.0.0
+        uses: pre-commit/action@v2.0.3
         continue-on-error: true
