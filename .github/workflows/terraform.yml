@@ -6,7 +6,7 @@ on:
 
 jobs:
   fmt:
-    name: 'terraform fmt'
+    name: 'Terraform Fmt'
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
@@ -18,7 +18,7 @@ jobs:
           actions_subcommand: 'fmt'
 
   validate:
-    name: 'terraform validate'
+    name: 'Terraform Validate'
     needs:
       - fmt
     runs-on: ubuntu-latest
@@ -38,7 +38,7 @@ jobs:
           actions_subcommand: 'validate'
           tf_actions_working_dir: ./_example
   plan:
-    name: 'terraform plan'
+    name: 'Terraform Plan'
     needs: fmt
     runs-on: ubuntu-latest
     steps:
