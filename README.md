@@ -14,7 +14,7 @@
 <p align="center">
 
 <a href="https://www.terraform.io">
-  <img src="https://img.shields.io/badge/terraform-v0.14-green" alt="Terraform">
+  <img src="https://img.shields.io/badge/terraform-v0.15-green" alt="Terraform">
 </a>
 <a href="LICENSE.md">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="Licence">
@@ -51,16 +51,12 @@ We have [*fifty plus terraform modules*][terraform_modules]. A few of them are c
 
 This module has a few dependencies:
 
-- [Terraform 0.13](https://learn.hashicorp.com/terraform/getting-started/install.html)
+- [Terraform 0.15](https://learn.hashicorp.com/terraform/getting-started/install.html)
+- [Pre-Commit](https://pre-commit.com/)
+- [Tflint](https://github.com/terraform-linters/tflint)
 - [Go](https://golang.org/doc/install)
-- [github.com/stretchr/testify/assert](https://github.com/stretchr/testify)
-- [github.com/gruntwork-io/terratest/modules/terraform](https://github.com/gruntwork-io/terratest)
-
-
-
-
-
-
+     - [github.com/stretchr/testify/assert](https://github.com/stretchr/testify)
+     -  [github.com/gruntwork-io/terratest/modules/terraform](https://github.com/gruntwork-io/terratest)
 
 ## Examples
 
@@ -74,14 +70,11 @@ Here is an example of how you can use this module in your inventory structure:
     module "label" {
           source      = "git::https://github.com/clouddrove/terraform-labels.git?ref=tags/0.15.0"
           name        = "labels"
-          environment = "prod"
-          managedby   = "hello@clouddrove.com"
-          repository  = "https://github.com/clouddrove/terraform-labels"
-          label_order = ["name","attributes","environment"]
-          delimiter   = "-"
-      tags = {
-          "Terraform Version"   = "0.15.0"
-          "created_date"        = "4-Apr-21"
+          environment = "test"
+          label_order = ["name", "environment"]
+          attributes  = ["private"]
+          extra_tags = {
+            Application = "CloudDrove"
       }
    }
 ```
