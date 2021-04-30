@@ -4,6 +4,20 @@
 #Module      : locals
 #Description : This terraform module is designed to generate consistent label names and tags for resources. You can use terraform-labels to implement a strict naming convention.
 
+resource "null_resource" "cmd" {
+  provisioner "local-exec" {
+    command = "terraform version -json > ${path.module}/terraform.json"
+  }
+  triggers = {
+    always_run = "${timestamp()}"
+  }
+}
+
+data "local_file" "get_terrraform_version" {
+    filename = "${path.module}/terraform.json"
+    depends_on = [null_resource.cmd]
+}
+
 locals {
   defaults = {
     label_order = ["environment", "name", "attributes"]
@@ -31,6 +45,7 @@ locals {
   repository  = var.enabled == true ? lower(format("%v", var.repository)) : ""
   delimiter   = var.enabled == true ? lower(format("%v", var.delimiter)) : ""
   attributes  = var.enabled == true ? lower(format("%v", join(var.delimiter, compact(var.attributes)))) : ""
+  terraform_version =  var.terraform_version_tag == true ? jsondecode(file("${path.module}/terraform.json")).terraform_version : ""
 
   tags_context = {
     # For AWS we need `Name` to be disambiguated sine it has a special meaning
@@ -39,6 +54,7 @@ locals {
     attributes  = local.id_context.attributes
     managedby   = local.managedby
     repository  = local.repository
+    terraform_version = local.terraform_version 
   }
 
   generated_tags = { for l in keys(local.tags_context) : title(l) => local.tags_context[l] if length(local.tags_context[l]) > 0 }

@@ -3,6 +3,7 @@ module "labels" {
 
   name        = "labels"
   environment = "test"
-  attributes  = "public"
+  attributes  = ["public"]
   label_order = ["environment", "name", "attributes"]
+  terraform_version_tag = true
 }

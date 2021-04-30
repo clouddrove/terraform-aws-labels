@@ -75,3 +75,9 @@ variable "context" {
   }
   description = "Default context to use for passing state between label invocations"
 }
+
+variable "terraform_version_tag" {
+  type = bool
+  default = true
+  description = "Enable to add Terraform Version dynamic tag"
+}
