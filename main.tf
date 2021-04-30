@@ -9,14 +9,14 @@ resource "null_resource" "cmd" {
     command = "terraform version -json > ${path.module}/terraform.json"
   }
   triggers = {
-        always = "${timestamp()}"
+    always = "${timestamp()}"
   }
 
 }
 
 data "local_file" "get_terrraform_version" {
-    filename = "${path.module}/terraform.json"
-    depends_on = [null_resource.cmd]
+  filename   = "${path.module}/terraform.json"
+  depends_on = [null_resource.cmd]
 }
 
 locals {
@@ -43,22 +43,24 @@ locals {
 
   enabled = var.enabled
 
-  name        = var.enabled == true ? lower(format("%v", var.name)) : ""
-  environment = var.enabled == true ? lower(format("%v", var.environment)) : ""
-  managedby   = var.enabled == true ? lower(format("%v", var.managedby)) : ""
-  repository  = var.enabled == true ? lower(format("%v", var.repository)) : ""
-  delimiter   = var.enabled == true ? lower(format("%v", var.delimiter)) : ""
-  attributes  = var.enabled == true ? lower(format("%v", join(var.delimiter, compact(var.attributes)))) : ""
-  terraform_version =  (var.terraform_version_tag == true && fileexists("${path.module}/terraform.json")) ? jsondecode(file("${path.module}/terraform.json")).terraform_version : ""
+  name              = var.enabled == true ? lower(format("%v", var.name)) : ""
+  environment       = var.enabled == true ? lower(format("%v", var.environment)) : ""
+  managedby         = var.enabled == true ? lower(format("%v", var.managedby)) : ""
+  repository        = var.enabled == true ? lower(format("%v", var.repository)) : ""
+  delimiter         = var.enabled == true ? lower(format("%v", var.delimiter)) : ""
+  attributes        = var.enabled == true ? lower(format("%v", join(var.delimiter, compact(var.attributes)))) : ""
+  terraform_version = (var.terraform_version_tag == true && fileexists("${path.module}/terraform.json")) ? jsondecode(file("${path.module}/terraform.json")).terraform_version : ""
+  timestamp         = var.timestamp_tag == true ? formatdate("DD MMM YYYY ZZZ", "${timestamp()}") : ""
 
   tags_context = {
-    # For AWS we need `Name` to be disambiguated sine it has a special meaning
-    name        = local.id
-    environment = local.environment
-    attributes  = local.id_context.attributes
-    managedby   = local.managedby
-    repository  = local.repository
-    terraform_version = local.terraform_version 
+    # For AWS we need `Name` to be disambiguated sine it has == truea special meaning
+    name              = local.id
+    environment       = local.environment
+    attributes        = local.id_context.attributes
+    managedby         = local.managedby
+    repository        = local.repository
+    terraform_version = local.terraform_version
+    timestamp         = local.timestamp
   }
 
   generated_tags = { for l in keys(local.tags_context) : title(l) => local.tags_context[l] if length(local.tags_context[l]) > 0 }
