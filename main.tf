@@ -9,8 +9,9 @@ resource "null_resource" "cmd" {
     command = "terraform version -json > ${path.module}/terraform.json"
   }
   triggers = {
-    always_run = "${timestamp()}"
+        always = "${timestamp()}"
   }
+
 }
 
 data "local_file" "get_terrraform_version" {
@@ -19,6 +20,9 @@ data "local_file" "get_terrraform_version" {
 }
 
 locals {
+  triggers = {
+    order = null_resource.cmd.id
+  }
   defaults = {
     label_order = ["environment", "name", "attributes"]
     delimiter   = "-"
@@ -45,7 +49,7 @@ locals {
   repository  = var.enabled == true ? lower(format("%v", var.repository)) : ""
   delimiter   = var.enabled == true ? lower(format("%v", var.delimiter)) : ""
   attributes  = var.enabled == true ? lower(format("%v", join(var.delimiter, compact(var.attributes)))) : ""
-  terraform_version =  var.terraform_version_tag == true ? jsondecode(file("${path.module}/terraform.json")).terraform_version : ""
+  terraform_version =  (var.terraform_version_tag == true && fileexists("${path.module}/terraform.json")) ? jsondecode(file("${path.module}/terraform.json")).terraform_version : ""
 
   tags_context = {
     # For AWS we need `Name` to be disambiguated sine it has a special meaning
