@@ -16,6 +16,6 @@ repos:
       - id: check-byte-order-marker
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
-      - id: debug-statements
+      - id: debug-astatements
       - id: check-yaml
       - id: check-added-large-files
