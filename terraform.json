@@ -1,0 +1,10 @@
+{
+  "terraform_version": "0.13.7",
+  "terraform_revision": "",
+  "provider_selections": {
+    "registry.terraform.io/hashicorp/aws": "3.38.0",
+    "registry.terraform.io/hashicorp/local": "2.1.0",
+    "registry.terraform.io/hashicorp/null": "3.1.0"
+  },
+  "terraform_outdated": true
+}
