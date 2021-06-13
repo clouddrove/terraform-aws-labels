@@ -103,7 +103,7 @@ Here is an example of how you can use this module in your inventory structure:
 | label\_order | Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] . | `list(any)` | `[]` | no |
 | managedby | ManagedBy, eg 'CloudDrove'. | `string` | `"hello@clouddrove.com"` | no |
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
-| repository | Terraform current module repo | `string` | `"https://github.com/clouddrove/terraform-labels"` | no |
+| repository | Terraform current module repo | `string` | `"https://github.com/clouddrove/terraform-aws-labels"` | no |
 
 ## Outputs
 
