@@ -29,9 +29,10 @@ locals {
   id_context = {
     name        = var.name
     environment = var.environment
+    attributes  = lower(join(var.delimiter, var.attributes))
   }
 
-  label_order = length(var.label_order) > 0 ? var.label_order : local.label_order_defaults.label_order
+  label_order = length(var.label_order) > 0 ? var.label_order : local.defaults.label_order
 
   # run loop for label order and set in value.
   id_labels = [for l in local.label_order : local.id_context[l] if length(local.id_context[l]) > 0]
