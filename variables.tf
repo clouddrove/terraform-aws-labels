@@ -14,7 +14,7 @@ variable "environment" {
 
 variable "repository" {
   type        = string
-  default     = "https://github.com/clouddrove/terraform-labels"
+  default     = "https://github.com/clouddrove/terraform-aws-labels"
   description = "Terraform current module repo"
 }
 

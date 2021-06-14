@@ -8,9 +8,6 @@ resource "null_resource" "cmd" {
   provisioner "local-exec" {
     command = "terraform version -json > ${path.module}/terraform.json"
   }
-  triggers = {
-    always = "${timestamp()}"
-  }
 
 }
 
