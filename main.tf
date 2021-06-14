@@ -47,7 +47,7 @@ locals {
   delimiter         = var.enabled == true ? lower(format("%v", var.delimiter)) : ""
   attributes        = var.enabled == true ? lower(format("%v", join(var.delimiter, compact(var.attributes)))) : ""
   terraform_version = (var.terraform_version_tag == true && fileexists("${path.module}/terraform.json")) ? jsondecode(file("${path.module}/terraform.json")).terraform_version : ""
-  timestamp         = var.timestamp_tag == true ? formatdate("DD MMM YYYY ZZZ", "${timestamp()}") : ""
+  timestamp         = var.timestamp == true ? formatdate("DD MMM YYYY ZZZ", "${timestamp()}") : ""
 
   tags_context = {
     # For AWS we need `Name` to be disambiguated sine it has == truea special meaning

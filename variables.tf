@@ -82,7 +82,7 @@ variable "terraform_version_tag" {
   description = "Enable to add Terraform Version dynamic tag"
 }
 
-variable "timestamp_tag" {
+variable "timestamp" {
   type        = bool
   default     = true
   description = "Enable to add Date for creating resources"
