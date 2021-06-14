@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: 'create readme'
+      - name: 'Create readme'
         uses: 'clouddrove/github-actions@v4.0'
         with:
           actions_subcommand: 'readme'

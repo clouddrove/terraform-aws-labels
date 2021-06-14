@@ -1,3 +1,4 @@
+
 module "labels" {
   source = "./../"
 
@@ -7,4 +8,5 @@ module "labels" {
   label_order           = ["environment", "name", "attributes"]
   terraform_version_tag = true
   timestamp             = true
+
 }

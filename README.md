@@ -96,15 +96,14 @@ Here is an example of how you can use this module in your inventory structure:
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | attributes | Additional attributes (e.g. `1`). | `list(string)` | `[]` | no |
-| context | Default context to use for passing state between label invocations | <pre>object({<br>    environment = string<br>    name        = string<br>    enabled     = bool<br>    delimiter   = string<br>    attributes  = list(string)<br>    label_order = list(string)<br>    tags        = map(string)<br>  })</pre> | <pre>{<br>  "attributes": [],<br>  "delimiter": "",<br>  "enabled": true,<br>  "environment": "",<br>  "label_order": [],<br>  "name": "",<br>  "tags": {}<br>}</pre> | no |
 | delimiter | Delimiter to be used between `organization`, `name`, `environment` and `attributes`. | `string` | `"-"` | no |
 | enabled | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
 | environment | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
+| extra\_tags | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(string)` | `{}` | no |
 | label\_order | Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] . | `list(any)` | `[]` | no |
 | managedby | ManagedBy, eg 'CloudDrove'. | `string` | `"hello@clouddrove.com"` | no |
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
-| repository | Terraform current module repo | `string` | `"https://github.com/clouddrove/terraform-labels"` | no |
-| tags | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(string)` | `{}` | no |
+| repository | Terraform current module repo | `string` | `"https://github.com/clouddrove/terraform-aws-labels"` | no |
 
 ## Outputs
 
