@@ -28,5 +28,5 @@ func Test(t *testing.T) {
 	Tags := terraform.OutputMap(t, terraformOptions, "tags")
 
 	// Check that we get back the outputs that we expect
-	assert.Equal(t, "test-labels", Tags["Name"])
+	assert.Equal(t, "labels-test-private", Tags["Name"])
 }
