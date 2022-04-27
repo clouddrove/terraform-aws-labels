@@ -8,7 +8,7 @@
 name : Terraform Labels
 
 # License of this project
-license: "MIT"
+license: "APACHE"
 
 # Canonical GitHub repo
 github_repo: clouddrove/terraform-lables
@@ -16,12 +16,17 @@ github_repo: clouddrove/terraform-lables
 # Badges to display
 badges:
   - name: "Terraform"
-    image: "https://img.shields.io/badge/terraform-v0.14-green"
+    image: "https://img.shields.io/badge/Terraform-v1.1.7-green"
     url: "https://www.terraform.io"
   - name: "Licence"
-    image: "https://img.shields.io/badge/License-MIT-blue.svg"
+    image: "https://img.shields.io/badge/License-APACHE-blue.svg"
     url: "LICENSE.md"
-
+  - name: "tfsec"
+    image: "https://github.com/clouddrove/terraform-aws-lables/actions/workflows/tfsec.yml/badge.svg"
+    url: "https://github.com/clouddrove/terraform-aws-lables/actions/workflows/tfsec.yml"
+  - name: "static-checks"
+    image: "https://github.com/clouddrove/terraform-aws-lables/actions/workflows/terraform.yml/badge.svg"
+    url: "https://github.com/clouddrove/terraform-aws-lables/actions/workflows/terraform.yml"
 #  description of this project
 description: |-
   This terraform module is designed to generate consistent label names and tags for resources. You can use terraform-labels to implement a strict naming convention.
@@ -44,7 +49,7 @@ usage : |-
             label_order = ["name","attributes","environment"]
             delimiter   = "-"
         tags = {
-            "Terraform Version"   = "0.15.0"
+            "Terraform Version"   = "1.0.1"
             "created_date"        = "4-Apr-21"
         }
      }
