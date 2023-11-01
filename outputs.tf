@@ -3,36 +3,36 @@
 #              for resources. You can use terraform-labels to implement a strict naming
 #              convention.
 output "id" {
-  value       = local.id
+  value       = try(local.id, null)
   description = "Disambiguated ID."
 }
 
 output "name" {
-  value       = local.name
+  value       = try(local.name, null)
   description = "Normalized name."
 }
 
 output "repository" {
-  value       = local.repository
+  value       = try(local.repository, null)
   description = "Terraform current module repo"
 }
 
 output "environment" {
-  value       = local.environment
+  value       = try(local.environment, null)
   description = "Normalized environment"
 }
 
 output "attributes" {
-  value       = local.attributes
+  value       = try(local.attributes, null)
   description = "Normalized attributes."
 }
 
 output "tags" {
-  value       = local.tags
+  value       = try(local.tags, null)
   description = "Normalized Tag map."
 }
 
 output "label_order" {
-  value       = local.label_order
+  value       = try(local.label_order, null)
   description = "Normalized Tag map."
 }
