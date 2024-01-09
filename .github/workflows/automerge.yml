@@ -8,5 +8,5 @@ jobs:
     secrets:
       GITHUB: ${{ secrets.GITHUB }}
     with:
-      tfcheck: 'basic / Check code format'
+      tfcheck: '_example / Check code format'
 ...
