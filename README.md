@@ -11,11 +11,11 @@
 
 <p align="center">
 
-<a href="https://github.com/clouddrove/terraform-lables/releases/latest">
-  <img src="https://img.shields.io/github/release/clouddrove/terraform-lables.svg" alt="Latest Release">
+<a href="https://github.com/clouddrove/terraform-aws-labels/releases/latest">
+  <img src="https://img.shields.io/github/release/clouddrove/terraform-aws-labels.svg" alt="Latest Release">
 </a>
-<a href="https://github.com/clouddrove/terraform-lables/actions/workflows/tfsec.yml">
-  <img src="https://github.com/clouddrove/terraform-lables/actions/workflows/tfsec.yml/badge.svg" alt="tfsec">
+<a href="https://github.com/clouddrove/terraform-aws-labels/actions/workflows/tfsec.yml">
+  <img src="https://github.com/clouddrove/terraform-aws-labels/actions/workflows/tfsec.yml/badge.svg" alt="tfsec">
 </a>
 <a href="LICENSE.md">
   <img src="https://img.shields.io/badge/License-APACHE-blue.svg" alt="Licence">
@@ -28,16 +28,16 @@
 </p>
 <p align="center">
 
-<a href='https://facebook.com/sharer/sharer.php?u=https://github.com/clouddrove/terraform-lables'>
+<a href='https://facebook.com/sharer/sharer.php?u=https://github.com/clouddrove/terraform-aws-labels'>
   <img title="Share on Facebook" src="https://user-images.githubusercontent.com/50652676/62817743-4f64cb80-bb59-11e9-90c7-b057252ded50.png" />
 </a>
 <a href='https://www.instagram.com/cloud_drove?igsh=cHJqaDY3bGtnYmh3' title="Follow On Instagram">
   <img src="https://github.com/gauravghongde/social-icons/blob/master/SVG/Color/Instagram.svg" width="23" height="23" />
 </a>
-<a href='https://www.linkedin.com/shareArticle?mini=true&title=Terraform+Labels&url=https://github.com/clouddrove/terraform-lables'>
+<a href='https://www.linkedin.com/shareArticle?mini=true&title=Terraform+Labels&url=https://github.com/clouddrove/terraform-aws-labels'>
   <img title="Share on LinkedIn" src="https://user-images.githubusercontent.com/50652676/62817742-4e339e80-bb59-11e9-87b9-a1f68cae1049.png" />
 </a>
-<a href='https://twitter.com/intent/tweet/?text=Terraform+Labels&url=https://github.com/clouddrove/terraform-lables'>
+<a href='https://twitter.com/intent/tweet/?text=Terraform+Labels&url=https://github.com/clouddrove/terraform-aws-labels'>
   <img title="Share on Twitter" src="https://user-images.githubusercontent.com/50652676/62817740-4c69db00-bb59-11e9-8a79-3580fbbf6d5c.png" />
 </a>
 
@@ -68,7 +68,7 @@ This table contains both Prerequisites and Providers:
 
 ## Examples
 
-**IMPORTANT:** Since the master branch used in source varies based on new modifications, we recommend using the [release versions](https://github.com/clouddrove/terraform-lables/releases).
+**IMPORTANT:** Since the master branch used in source varies based on new modifications, we recommend using the [release versions](https://github.com/clouddrove/terraform-aws-labels/releases).
 
 📌 For additional usage examples, check the complete list under [`examples/`](./examples) directory.
 
@@ -104,8 +104,8 @@ Refer [here](CHANGELOG.md).
 
 Big thanks to our contributors for elevating our project with their dedication and expertise! But, we do not wish to stop there, would like to invite contributions from the community in improving these projects and making them more versatile for better reach. Remember, every bit of contribution is immensely valuable, as, together, we are moving in only 1 direction, i.e. forward. 
 
-<a href="https://github.com/clouddrove/terraform-lables/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=clouddrove/terraform-lables&max" />
+<a href="https://github.com/clouddrove/terraform-aws-labels/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=clouddrove/terraform-aws-labels&max" />
 </a>
 <br>
 <br>
@@ -131,9 +131,9 @@ Big thanks to our contributors for elevating our project with their dedication a
 
 
 ## Feedback 
-Spot a bug or have thoughts to share with us? Let's squash it together! Log it in our [issue tracker](https://github.com/clouddrove/terraform-lables/issues), feel free to drop us an email at [hello@clouddrove.com](mailto:hello@clouddrove.com).
+Spot a bug or have thoughts to share with us? Let's squash it together! Log it in our [issue tracker](https://github.com/clouddrove/terraform-aws-labels/issues), feel free to drop us an email at [hello@clouddrove.com](mailto:hello@clouddrove.com).
 
-Show some love with a ★ on [our GitHub](https://github.com/clouddrove/terraform-lables)!  if our work has brightened your day! – your feedback fuels our journey!
+Show some love with a ★ on [our GitHub](https://github.com/clouddrove/terraform-aws-labels)!  if our work has brightened your day! – your feedback fuels our journey!
 
 
 ## :rocket: Our Accomplishment
