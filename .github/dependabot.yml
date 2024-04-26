@@ -16,7 +16,7 @@ updates:
     reviewers:
       - "approvers"
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "_example/" # Location of package manifests
+    directory: "examples/" # Location of package manifests
     schedule:
       interval: "weekly"
     # Add assignees
