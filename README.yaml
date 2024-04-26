@@ -11,16 +11,16 @@ name : Terraform Labels
 license: "APACHE"
 
 # Canonical GitHub repo
-github_repo: clouddrove/terraform-lables
+github_repo: clouddrove/terraform-aws-labels
 
 # Badges to display
 badges:
   - name: "Latest Release"
-    image: "https://img.shields.io/github/release/clouddrove/terraform-lables.svg"
-    url: "https://github.com/clouddrove/terraform-lables/releases/latest"
+    image: "https://img.shields.io/github/release/clouddrove/terraform-aws-labels.svg"
+    url: "https://github.com/clouddrove/terraform-aws-labels/releases/latest"
   - name: "tfsec"
-    image: "https://github.com/clouddrove/terraform-lables/actions/workflows/tfsec.yml/badge.svg"
-    url: "https://github.com/clouddrove/terraform-lables/actions/workflows/tfsec.yml"
+    image: "https://github.com/clouddrove/terraform-aws-labels/actions/workflows/tfsec.yml/badge.svg"
+    url: "https://github.com/clouddrove/terraform-aws-labels/actions/workflows/tfsec.yml"
   - name: "Licence"
     image: "https://img.shields.io/badge/License-APACHE-blue.svg"
     url: "LICENSE.md"
