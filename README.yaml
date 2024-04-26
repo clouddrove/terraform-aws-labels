@@ -15,25 +15,31 @@ github_repo: clouddrove/terraform-lables
 
 # Badges to display
 badges:
-  - name: "Terraform"
-    image: "https://img.shields.io/badge/Terraform-v1.1.7-green"
-    url: "https://www.terraform.io"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/clouddrove/terraform-lables.svg"
+    url: "https://github.com/clouddrove/terraform-lables/releases/latest"
+  - name: "tfsec"
+    image: "https://github.com/clouddrove/terraform-lables/actions/workflows/tfsec.yml/badge.svg"
+    url: "https://github.com/clouddrove/terraform-lables/actions/workflows/tfsec.yml"
   - name: "Licence"
     image: "https://img.shields.io/badge/License-APACHE-blue.svg"
     url: "LICENSE.md"
-  - name: "tfsec"
-    image: "https://github.com/clouddrove/terraform-aws-labels/actions/workflows/tfsec.yml/badge.svg"
-    url: "https://github.com/clouddrove/terraform-aws-labels/actions/workflows/tfsec.yml"
-  - name: "static-checks"
-    image: "https://github.com/clouddrove/terraform-aws-labels/actions/workflows/terraform.yml/badge.svg"
-    url: "https://github.com/clouddrove/terraform-aws-labels/actions/workflows/terraform.yml"
-#  description of this project
+  - name: "Changelog"
+    image: "https://img.shields.io/badge/Changelog-blue"
+    url: "CHANGELOG.md"
+
+prerequesties:
+  - name: Terraform
+    url: https://learn.hashicorp.com/terraform/getting-started/install.html
+    version: ">= 1.6.6"
+
+providers:
+  - name: aws
+    url: https://aws.amazon.com/
+    version: ">= 5.31.0"
+
 description: |-
   This terraform module is designed to generate consistent label names and tags for resources. You can use terraform-labels to implement a strict naming convention.
-
-# extra content
-include:
- - "terraform.md"
 
 # How to use this project
 usage : |-
