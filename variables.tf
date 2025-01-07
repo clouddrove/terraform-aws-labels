@@ -6,40 +6,52 @@ variable "name" {
   description = "Name  (e.g. `app` or `cluster`)."
 }
 
+variable "application" {
+  type        = string
+  default     = ""
+  description = "Application (e.g. `cd` or `clouddrove`)."
+}
+
 variable "environment" {
   type        = string
   default     = ""
   description = "Environment (e.g. `prod`, `dev`, `staging`)."
 }
 
+variable "label_order" {
+  type        = list
+  default     = []
+  description = "Label order, e.g. `name`,`application`."
+}
+
 variable "repository" {
   type        = string
-  default     = "https://github.com/clouddrove/terraform-aws-labels"
+  default     = "https://github.com/clouddrove/terraform-labels"
   description = "Terraform current module repo"
 }
 
-variable "label_order" {
-  type        = list(any)
-  default     = []
-  description = "Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] ."
-}
-
 variable "attributes" {
-  type        = list(string)
+  type        = list
   default     = []
   description = "Additional attributes (e.g. `1`)."
 }
 
-variable "extra_tags" {
+variable "tags" {
   type        = map(string)
   default     = {}
   description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
 }
 
+variable "createdby" {
+  type        = string
+  default     = "terraform"
+  description = "CreatedBy, eg 'terraform'."
+}
+
 variable "managedby" {
   type        = string
-  default     = "hello@clouddrove.com"
-  description = "ManagedBy, eg 'CloudDrove'."
+  default     = "anmol@clouddrove.com"
+  description = "ManagedBy, eg 'CloudDrove' or 'AnmolNagpal'."
 }
 
 variable "enabled" {
@@ -52,4 +64,10 @@ variable "delimiter" {
   type        = string
   default     = "-"
   description = "Delimiter to be used between `organization`, `name`, `environment` and `attributes`."
+}
+
+variable "extra_tags" {
+  type        = map(string)
+  default     = {}
+  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
 }
