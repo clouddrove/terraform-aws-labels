@@ -26,7 +26,7 @@ variable "label_order" {
 
 variable "repository" {
   type        = string
-  default     = "https://github.com/clouddrove/terraform-labels"
+  default     = ""
   description = "Terraform current module repo"
 }
 
