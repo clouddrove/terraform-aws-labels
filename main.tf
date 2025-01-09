@@ -28,7 +28,7 @@ locals {
   managedby   = local.enabled ? lower(format("%v", var.managedby)) : ""
   attributes  = local.enabled ? lower(format("%v", join(var.delimiter, compact(var.attributes)))) : ""
   repository  = local.enabled ? lower(format("%v", var.repository)) : ""
-
+  
   # Tags context for additional flexibility
   tags_context = {
     "Name"        = local.id
@@ -37,6 +37,8 @@ locals {
     "CreatedBy"   = local.createdby
     "ManagedBy"   = local.managedby
     "Repository"  = local.repository
+    "kubernetes.io/role/elb" = "1"  # Add the tag here
+
   }
 
   # Generate dynamic tags based on context
