@@ -37,8 +37,6 @@ locals {
     "CreatedBy"   = local.createdby
     "ManagedBy"   = local.managedby
     "Repository"  = local.repository
-    "kubernetes.io/role/elb" = "1"  # Add the tag here
-
   }
 
   # Generate dynamic tags based on context
