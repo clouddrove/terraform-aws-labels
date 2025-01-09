@@ -31,12 +31,12 @@ locals {
 
   # Tags context for additional flexibility
   tags_context = {
-    name        = local.id
-    application = local.application
-    environment = local.environment
-    createdby   = local.createdby
-    managedby   = local.managedby
-    repository  = local.repository
+    "Name"        = local.id
+    "Application" = local.application
+    "Environment" = local.environment
+    "CreatedBy"   = local.createdby
+    "ManagedBy"   = local.managedby
+    "Repository"  = local.repository
   }
 
   # Generate dynamic tags based on context
