@@ -20,7 +20,7 @@ locals {
   id_labels   = [for l in local.label_order : local.id_context[l] if length(local.id_context[l]) > 0 && var.enabled]
   id          = var.enabled ? lower(join(var.delimiter, local.id_labels, var.attributes)) : ""
   name        = var.enabled ? lower(format("%v", var.name)) : ""
-  environment = var.enabled ? lower(format("%v", var.environment)) : ""
+  environment = var.enabled ? (var.case_sensitive == true ? format("%v", var.environment) : lower(format("%v", var.environment))) : ""
   managedby   = var.enabled ? lower(format("%v", var.managedby)) : ""
   repository  = var.enabled ? lower(format("%v", var.repository)) : ""
   attributes  = var.enabled ? lower(format("%v", join(var.delimiter, compact(var.attributes)))) : ""

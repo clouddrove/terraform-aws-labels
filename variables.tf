@@ -53,3 +53,9 @@ variable "delimiter" {
   default     = "-"
   description = "Delimiter to be used between `organization`, `name`, `environment` and `attributes`."
 }
+
+variable "case_sensitive" {
+  description = "Determines whether the environment variable should be case-sensitive"
+  type        = bool
+  default     = false
+}
