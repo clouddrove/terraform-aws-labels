@@ -1,8 +1,8 @@
 module "labels" {
   source = "./../"
 
-  case_sensitive = true
   enabled        = true
+  case_sensitive = true
   name           = "labels"
   environment    = "test"
   label_order    = ["name", "environment"]
