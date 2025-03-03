@@ -3,6 +3,7 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | attributes | Additional attributes (e.g. `1`). | `list(string)` | `[]` | no |
+| case\_sensitive | Determines whether the environment variable should be case-sensitive | `bool` | `false` | no |
 | delimiter | Delimiter to be used between `organization`, `name`, `environment` and `attributes`. | `string` | `"-"` | no |
 | enabled | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
 | environment | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
